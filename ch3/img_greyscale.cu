@@ -4,7 +4,7 @@
 #define CHANNELS 3
 
 using namespace std;
-// nvcc img_greyscale.cu -o img_greyscale `pkg-config --cflags --libs opencv4`
+// nvcc -ccbin g++-10 -std=c++14 img_greyscale.cu -o img_greyscale `pkg-config --cflags --libs opencv4`
 
 __global__
 void colorToGreyscaleKernel(unsigned char* Pout, unsigned char* Pin, int W, int H) {
